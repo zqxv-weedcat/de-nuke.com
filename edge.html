@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>NUKING</title>
+
+        <style>
+            body {
+                position: relative;
+                background-color: black;
+                color: white;
+            }
+            main {
+                font-family: monospace;
+                font-size: x-large;
+                padding: 20px;
+                color: white;
+                position: relative;
+            }
+            a:link {
+                color:white;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            a:visited{
+                color:white;
+                background-color: transparent;
+                text-decoration: none;
+            }
+            footer {
+                color: #fff;
+                padding: 10px;
+                text-align: center;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+            p {
+                color:white;
+                font-family: monospace;
+                font-size: xx-large;
+            }
+            .center {
+                display: block;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 5%;
+            }
+            #intro-container {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: black;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 999;
+                animation: 1s fadeOut 0.5s ease forwards;
+            }
+            .image-container {
+                display: flex;
+                align-items: center;
+                padding: 15px;
+            }
+            .text-container {
+                flex:1;
+                padding: 15px;
+            }
+            #intro {
+                opacity: 1;
+            }
+            @keyframes fadeOut {
+                0% {
+                    opacity: 1;
+                }
+                100% {
+                    opacity: 0;
+                    display: none;
+                }
+            }
+            .shake-image {
+                transition: transform 0.2s ease-in-out;
+            }
+            .shake-animation {
+                animation: shake 0.4s ease-in-out;
+            }
+            .white-screen {
+                width: 100%;
+                height: 100vh;
+                background-color: white;
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: none;
+                z-index: 9999;
+                animation: 3s fadeOut 0.5s ease forwards;
+            }
+            @keyframes shake {
+                0% { transform: translate(1px, 1px) rotate(0deg); }
+                10% { transform: translate(-1px, -2px) rotate(-1deg); }
+                20% { transform: translate(-3px, 0px) rotate(1deg); }
+                30% { transform: translate(3px, 2px) rotate(0deg); }
+                40% { transform: translate(1px, -1px) rotate(1deg); }
+                50% { transform: translate(-1px, 2px) rotate(-1deg); }
+                60% { transform: translate(-3px, 1px) rotate(0deg); }
+                70% { transform: translate(3px, 1px) rotate(-1deg); }
+                80% { transform: translate(-1px, -1px) rotate(1deg); }
+                90% { transform: translate(1px, 2px) rotate(0deg); }
+                100% { transform: translate(1px, -2px) rotate(-1deg); }
+            }
+            #container {
+                cursor: pointer;
+                margin-right: 15%;
+                margin-top: 5%;
+            }
+            #image-button {
+                cursor: pointer;
+            }
+        </style>
+
+        <body>  
+            <header>
+                <a href="index.html">
+                    <img class="center" src="images/logo.png" height = "60" onclick="shakeImage(this); playSound('sounds/error.mp3')" >
+                </a>
+                    <audio id="audio">
+                        <source src="sounds/barcode.mp3" type="audio/mpeg">
+                        <source src="sounds/error.mp3" type="audio/mpeg">
+                        <source src="sounds/reload.mp3" type="audio/mpeg">
+                        <source src="sounds/flash.mp3" type="audio/mpeg">
+                    </audio>
+
+                <script>
+
+                    var canPlaySound = true;
+
+                    function playSound(soundPath) {
+                        if (canPlaySound) {
+                            var audio = document.getElementById("audio");
+                            audio.src = soundPath;
+                            audio.play();
+                            canPlaySound = false;
+                            setTimeout(function () {
+                                canPlaySound = true;
+                            }, 2000);
+                        }
+                    }
+                </script>
+            </header>
+            <main style="text-align: center;">
+                we 
+                <a href="nuke.html">nuke.</a>
+                <a href="edge.html">edge.</a>
+                <a href="bugging.html">bugging.</a>
+            </main>
+            <body>
+                <p style="text-align: center; margin-top: 5%">
+                    can you edge? no? well lemme teach you.
+                </p>
+                <iframe width="960" height="540" style="margin-bottom: 5%; margin-left: auto; margin-right: auto; display: block;"
+                    src="https://www.youtube.com/embed/UmmKwKS74pw">
+                </iframe>
+            </body>
+    </head>
+</html>
