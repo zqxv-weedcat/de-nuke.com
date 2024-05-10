@@ -41,11 +41,19 @@
                 font-family: monospace;
                 font-size: xx-large;
             }
-            .center {
-                display: block;
+            .nuke {
+                display: inline-block;
                 margin-left: auto;
                 margin-right: auto;
+            }
+            .center {
                 margin-top: 5%;
+                margin-left: auto;
+                margin-right: auto;
+                display: block;
+            }
+            #images{
+                text-align:center;
             }
             #intro-container {
                 position: fixed;
@@ -157,13 +165,13 @@
                 <a href="bugging.html">bugging.</a>
             </main>
             <body>
-                <div style="margin-left: 25%;">
-                    <img src="videos/1.gif">
-                    <img src="videos/2.gif">
+                <div id="images">
+                    <img  class="nuke" src="videos/1.gif">
+                    <img  class="nuke" src="videos/2.gif">
                 </div>
-                <div style="margin-left: 25%; margin-bottom: 5%;">
-                    <img src="videos/3.gif">
-                    <img src="videos/4.gif">
+                <div id="images" style="margin-bottom: 5%;">
+                    <img class="nuke" src="videos/3.gif">
+                    <img class="nuke" src="videos/4.gif">
                 </div>
             </body>
     </head>
