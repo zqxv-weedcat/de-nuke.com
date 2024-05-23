@@ -214,6 +214,13 @@
         <audio id="audio4" src="sounds/reload.mp3"></audio>
         <audio id="audio5" src="sounds/shot1.mp3"></audio>
         <audio id="audio6" src="sounds/shot2.mp3"></audio>
+        
+        <audio id="voice1" src="voiceline/ahh i need help here VL.mp3"></audio>
+        <audio id="voice2" src="voiceline/i dont kno what to do VL.mp3"></audio>
+        <audio id="voice3" src="voiceline/i need help VL.mp3"></audio>
+        <audio id="voice4" src="voiceline/we are losin control VL.mp3"></audio>
+        <audio id="voice5" src="voiceline/who will protect me VL.mp3"></audio>
+        <audio id="voice6" src="voiceline/where is everyon VL.mp3"></audio>
 
         <div id="intro-container">
             <div id="intro">
@@ -230,7 +237,7 @@
             <a href="bugging.html">bugging.</a>
         </main>
         <div class="image-container">
-            <img src="images/art1.png" height="500" style="margin-left: 15%;">
+            <img src="images/art1.png" height="500" style="margin-left: 15%;" id="clickable-image">
             <p style="display: flex; padding-right: 15%; padding-left: 15%;">
                 "A silent alarm has been tripped by the guard shack at the MAC Nuclear Power Plant. We will enter from the back side of the plant and secure the area."
             </p>
@@ -253,7 +260,7 @@
         <div class="image-container">
             <div id="container" style= "display: block; margin-left: auto; margin-right: auto; margin-bottom: 5%;">
                 <img id="playButtonCT" src="images/ct_mug.png" height="600" onclick="playAndReplaceCT()">
-                <img id="playButtonT" src="images/t_mug.png" height="600" onclick="playAndReplaceT()">
+                <img id="playButtonT" src="images/t_mug.png" height="600" onclick="playAndReplaceT()" >
             </div>
         </div>
         <script>
@@ -322,6 +329,27 @@
                     playButton.src = "images/t_mug4.png";
                 }
             }
+
+            document.getElementById('clickable-image').addEventListener('click', function() {
+            // Array of audio element IDs
+            var voiceLines = ['voice1', 'voice2', 'voice3', 'voice4', 'voice5', 'voice6'];
+            
+            // Select a random voice line
+            var randomIndex = Math.floor(Math.random() * voiceLines.length);
+            var selectedVoiceLine = document.getElementById(voiceLines[randomIndex]);
+            
+            // Pause any playing voice lines
+            voiceLines.forEach(function(id) {
+                var audioElement = document.getElementById(id);
+                if (!audioElement.paused) {
+                    audioElement.pause();
+                    audioElement.currentTime = 0;
+                }
+            });
+
+            // Play the selected voice line
+            selectedVoiceLine.play();
+            });
         </script>
     </body>
 </html>
